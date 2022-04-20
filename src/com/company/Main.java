@@ -27,33 +27,32 @@ public class Main {
 
     public static String getDeliveryDistance(int distance) {
         if (distance <= 20) {
-            // System.out.println("Для доставки в " + distance + " км потребуется один день");
             return "Для доставки потребуется один день";
         } else if (distance >= 20 && distance <= 60) {
-            // System.out.println("Для доставки в " + distance + " км потребуется два дня");
             return "Для доставки потребуется два дня";
         } else if (distance >= 60 && distance <= 100) {
-            //System.out.println("Для доставки в " + distance + " км потребуется три дня");
             return "Для доставки потребуется три дня";
         } else {
-            // System.out.println("Доставка невозможна");
         }
         return "Доставка невозможна";
     }
 
     public static void getDuplicate(String str) {
         int i = 0;
-        int j;
-        for (j = i + 1; j < str.length(); ) {
-            if (str.charAt(i) == str.charAt(j)) {
-                System.out.println("Обнаружен дублирующий символ " + str.charAt(i));
+        int j = i + 1;
+        if (str.charAt(i) < str.charAt(j)) {
+            System.out.println("Нет дублирующих символов");
+        }
+        for (i = 0; i < str.length(); i++) {
+            for (j = i + 1; j < str.length(); ) {
+                if (str.charAt(i) == str.charAt(j)) {
+                    System.out.println("Обнаружен дублирующий символ " + str.charAt(i));
+                }
                 break;
-            } else {
-                System.out.println("Нет дублирующих символов");
             }
-            return;
         }
     }
+
 
     public static void getReverse(int[] numbers) {
         for (int i = numbers.length; i >= 0; i--) {
@@ -63,6 +62,7 @@ public class Main {
         }
     }
 
+
     public static void main(String[] args) {
         System.out.println("#Задание 1#");
         printLeapYear(2021);
@@ -71,7 +71,7 @@ public class Main {
         System.out.println("#Задание 3#");
         System.out.println(getDeliveryDistance(26));
         System.out.println("#Задание 4#");
-        String str = "acdgijk";//"aabccddefgghiijjkk";
+        String str = "aabccddefgghiijjkk";//"acdgijk";
         getDuplicate(str);
         System.out.println("#Задание 5#");
         int[] numbers = {3, 2, 1, 6, 5};
