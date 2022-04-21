@@ -71,7 +71,7 @@ public class Main {
         System.out.println("#Задание 3#");
         System.out.println(getDeliveryDistance(26));
         System.out.println("#Задание 4#");
-        String str = "aabccddefgghiijjkk";//"acdgijk";
+        String str = "aabccddefgghiijjkk";
         getDuplicate(str);
         System.out.println("#Задание 5#");
         int[] numbers = {3, 2, 1, 6, 5};
